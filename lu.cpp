@@ -25,15 +25,29 @@ class Queue{
         rear->next = aux;
         rear = aux;
     }
-
     Node dequeue(){
-        this->next
-
+        Node *aux = front -> next;
+        front -> next = front-> next -> next;
+        return aux;
     }
-
-
 }
 
+class Stack{
+    private Node *top;
+    Stack(){
+        this->top = new Node(0,0);
+    }
+    void push(int dataM, int dataT){
+        Node *aux = new Node(dataM, dataT);
+        aux -> next = top -> next;
+        top -> next = aux;
+    }
+    
+    Node pop(){
+        return
+    }
+
+}
 
 
 int main(){
