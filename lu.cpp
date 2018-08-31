@@ -9,12 +9,13 @@ struct Node{
         this->dataM = dataM;
         this->dataT = dataT;
         this->next = NULL;
-    } 
+    }
 }typedef Node;
 
 class Queue{
-    private Node *front, *rear;
-
+private:
+    Node *front, *rear;
+public:
     Queue(){
         front = new Node(0,0);
         rear = front;
@@ -25,15 +26,17 @@ class Queue{
         rear->next = aux;
         rear = aux;
     }
-    Node dequeue(){
+    Node* dequeue(){
         Node *aux = front -> next;
         front -> next = front-> next -> next;
         return aux;
     }
-}
+};
 
 class Stack{
-    private Node *top;
+private:
+    Node *top;
+public:
     Stack(){
         this->top = new Node(0,0);
     }
@@ -42,19 +45,28 @@ class Stack{
         aux -> next = top -> next;
         top -> next = aux;
     }
-    
-    Node pop(){
-        return
-    }
 
+    Node* pop(){
+    Node *aux = top -> next;
+    top -> next = top -> next -> next;
+    return aux;
 }
+
+};
 
 
 int main(){
-    int numeroEmpresa;
-    cin >> qntdEmpresas;
-    for(int i = 0; i < qntdEmpresas; i++){
+    int amountCompanies, amountProcesses, magistrate, time;
 
+    //Receiving inputs
+    scanf("%d",&amountCompanies);
+    Queue* arrayQueue = new Queue[amountCompanies];
+    for(int i = 0; i < amountCompanies; i++){
+        scanf("%d",&amountProcesses);
+        for(int j = 0; j < amountProcesses; j++){
+            scanf("%d",&magistrate);
+            scanf("%d",&time);
+            arrayQueue -> enqueue(magistrate, time);
+        }
     }
-    return 0;
 }
