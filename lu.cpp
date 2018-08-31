@@ -55,18 +55,21 @@ public:
 };
 
 
+
 int main(){
     int amountCompanies, amountProcesses, magistrate, time;
 
     //Receiving inputs
     scanf("%d",&amountCompanies);
-    Queue* arrayQueue = new Queue[amountCompanies];
+    Queue *arrayQueue[amountCompanies];
     for(int i = 0; i < amountCompanies; i++){
         scanf("%d",&amountProcesses);
         for(int j = 0; j < amountProcesses; j++){
             scanf("%d",&magistrate);
             scanf("%d",&time);
-            arrayQueue -> enqueue(magistrate, time);
+            arrayQueue[i] -> enqueue(magistrate, time);
         }
     }
+
+
 }
