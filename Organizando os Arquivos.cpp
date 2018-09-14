@@ -1,12 +1,14 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-//Chave ainda esta errada
+//ainda falta implementar node e fila
+
 int chave(string nome){
-    int k = 0;
+    int soma = 0;
     for(int i = 0; i < nome.length(); i++) {
-        k = k + (i * nome.at(i));
+        soma = soma + ((i + 1) * nome.at(i));
     }
+    return soma;
 }
 
 int dispersao(int k, int m){
@@ -14,6 +16,7 @@ int dispersao(int k, int m){
 }
 
 int buscaBinaria(int valor, int vetor[]){
+    //Array precisa estar ordenado para binary search funcionar
     int l = 0, r = (sizeof(vetor)/sizeof(vetor[0]) - 1);
     int m;
     while(l <= r){
