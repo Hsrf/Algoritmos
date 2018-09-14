@@ -101,7 +101,7 @@ int main() {
     for(int i = 0; i < qntdArquivosConsultados; i++){
         scanf("%s", &nomesArquivosConsultados[i]);
     }
-
+    
     int resultadoBusca;
     //Fazendo o hashing para arquivos que serao transferidos
     for(int i = 0; i < qntdArquivosTransferidos; i++){
